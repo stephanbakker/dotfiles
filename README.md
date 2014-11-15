@@ -18,6 +18,8 @@ Using Vundle to manage all plugins:
 4. Setup Tern [Tern github](https://github.com/marijnh/tern_for_vim)
     install the tern server by running `npm install` in the `~/.vim/bundle/tern_for_vim` directory.
 
+See what plugins you have by running `:PluginList`
+
 
 
 
