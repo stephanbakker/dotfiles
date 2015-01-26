@@ -28,6 +28,7 @@ Bundle "tomtom/tlib_vim"
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'matchit.zip'
+Plugin 'editorconfig/editorconfig-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -205,6 +206,12 @@ function! JavaScriptFold()
     set foldtext=getline(v:foldstart)
 endfunction
 au FileType javascript call JavaScriptFold()
+
+" for text files
+function! MyTextFiles()
+    set tw=100
+endfunction
+au FileType text call MyTextFiles
 
 " jsLint http://technotales.wordpress.com/2011/05/21/node-jslint-and-vim/
 " using syntastic now
