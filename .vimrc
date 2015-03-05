@@ -199,6 +199,8 @@ let g:SimpleJsIndenter_BriefMode = 1
 
 " syntastic
 let g:syntastic_javascript_checkers = ['jshint']
+" disable autocheck on html, due to angular custom tags/attrs etc
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 function! JavaScriptFold()
     set foldmethod=marker
