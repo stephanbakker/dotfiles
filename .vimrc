@@ -198,6 +198,9 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 let g:SimpleJsIndenter_BriefMode = 1
 
 " syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_javascript_checkers = ['jshint']
 
 function! JavaScriptFold()
