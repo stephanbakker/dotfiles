@@ -14,4 +14,6 @@ else
 	fi
 fi
 unset doIt
-source ~/.bash_profile
+
+[ -s "~/.bash_profile" ] && . "~/.bash_profile" # source it if found
+[ -s "~/.zshrc" ] && . "~/.zshrc" # source it if found
