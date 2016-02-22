@@ -7,6 +7,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mileszs/ack.vim'
 
 " use neo-make iso syntastic
 Plug 'benekastah/neomake'
