@@ -56,6 +56,7 @@ set expandtab
 set shiftround                  " round indent to multiple of shiftwidth, using > or <
 set smarttab                    " insert tabs on the start of a line according to shiftwidth, not tabstop
 set copyindent                  "copy previous indentation on autoindting
+set autoread                    " autoread when changed outside vim
 
 
 " lines
@@ -111,8 +112,8 @@ map <leader>t :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target)$'
 
 " move to left/right split more easily, to nerdtree on the left
-" nnoremap <C-H> <C-W><C-H>
-nnoremap <BS> <C-W><C-H>
+"nnoremap <C-H> <C-W><C-H>
+nnoremap <BS> <C-W><C-H>  " hack to using <BS> iso <C-H>
 nnoremap <C-L> <C-W><C-L>
 
 " folding
