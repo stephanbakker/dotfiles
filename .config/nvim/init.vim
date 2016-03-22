@@ -3,10 +3,13 @@ call plug#begin('$HOME/.config/nvim/plugged')
 " Make sure you use single quotes
 
 " copy from vimrc/mvim
+Plug 'YankRing.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mileszs/ack.vim'
+Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 
 " use neo-make iso syntastic
 Plug 'benekastah/neomake'
@@ -51,6 +54,7 @@ set expandtab
 set shiftround                  " round indent to multiple of shiftwidth, using > or <
 set smarttab                    " insert tabs on the start of a line according to shiftwidth, not tabstop
 set copyindent                  "copy previous indentation on autoindting
+set autoread                    " autoread when changed outside vim
 
 
 " lines
@@ -105,34 +109,12 @@ map <leader>t :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target)$'
 
 " move to left/right split more easily, to nerdtree on the left
-nnoremap <C-H> <C-W><C-H>
-nnoremap <BS> <C-W><C-H>
-"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+nnoremap <BS> <C-W><C-H>  " hack to using <BS> iso <C-H>
+nnoremap <C-L> <C-W><C-L>
 
 " let me use ; iso :
 nnoremap ; :
-
-" navigate tabs
-map  <D-0> 0gt
-imap <D-0> <Esc>0gt
-map  <D-1> 1gt
-imap <D-1> <Esc>1gt
-map  <D-2> 2gt
-imap <D-2> <Esc>2gt
-map  <D-3> 3gt
-imap <D-3> <Esc>3gt
-map  <D-4> 4gt
-imap <D-4> <Esc>4gt
-map  <D-5> 5gt
-imap <D-5> <Esc>5gt
-map  <D-6> 6gt
-imap <D-6> <Esc>6gt
-map  <D-7> 7gt
-imap <D-7> <Esc>7gt
-map  <D-8> 8gt
-imap <D-8> <Esc>8gt
-map  <D-9> 9gt
-imap <D-9> <Esc>9gt
 
 " force save
 map <leader>w :w!<CR>
@@ -142,6 +124,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " NeoMake
+autocmd! BufWritePost * Neomake
 let g:neomake_javascript_jshint_maker = {
     \ 'args': ['--verbose'],
     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
