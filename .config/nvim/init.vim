@@ -111,13 +111,8 @@ map <leader>t :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target)$'
 
 " move to left/right split more easily, to nerdtree on the left
-<<<<<<< HEAD
 "nnoremap <C-H> <C-W><C-H>
 nnoremap <BS> <C-W><C-H>  " hack to using <BS> iso <C-H>
-nnoremap <C-L> <C-W><C-L>
-=======
-" nnoremap <C-H> <C-W><C-H>
-nnoremap <BS> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
 " folding
