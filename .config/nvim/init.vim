@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
+" JS syntax, supports ES6
 Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 
 " use neo-make iso syntastic
@@ -45,6 +46,7 @@ set list
 set modelines=0
 set nomodeline
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
+set autoread            " When a file has been changed outside read it again
 
 " tab settings
 set tabstop=4                   "a tab is four spaces
@@ -109,9 +111,23 @@ map <leader>t :CtrlP<CR>
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target)$'
 
 " move to left/right split more easily, to nerdtree on the left
+<<<<<<< HEAD
 "nnoremap <C-H> <C-W><C-H>
 nnoremap <BS> <C-W><C-H>  " hack to using <BS> iso <C-H>
 nnoremap <C-L> <C-W><C-L>
+=======
+" nnoremap <C-H> <C-W><C-H>
+nnoremap <BS> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+
+" folding
+set foldmethod=syntax
+set foldlevelstart=128
+set foldcolumn=0
+
+nnoremap <F1> za 
+inoremap <F1> <C-O>za 
+onoremap <F1> <C-C>za 
 
 " let me use ; iso :
 nnoremap ; :
